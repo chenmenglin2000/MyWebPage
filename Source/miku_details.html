@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hinataの時光機</title>
+    <link rel="shortcut icon" href="./img/svg/title.svg" type="image/x-icon"/>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="css/live2d.css" />
+    <script src="js/both_page.js" type="text/javascript"></script>
+</head>
+<body>
+<header>
+    <div id="nav_back" style="width:100%;height:70px;position:absolute;"></div>
+    <nav id="page_nav">
+        <div id="header_nav">
+            <div id="header_left"><h1>Hinataの時光機</h1></div>
+            <div id="header_right">
+                <div id="header_login"><a href="login.html"><img src="./img/svg/login.svg" alt=""/></a></div>
+                <div id="header_search"><img src="./img/svg/search.svg" alt=""/></div>
+                <div id="search"><label for="male"></label><input type="text" id="male"/></div>
+            </div>
+            <div id="header_center">
+                <div id="header_center1"><a href="index.html"><img src="./img/svg/home.svg" alt=""/>首页</a></div>
+                <div id="header_center2">
+                    <a href="miku.html"><img src="./img/svg/miku.svg" alt=""/>初音未来</a>
+                    <div class="arrow"></div>
+                    <ul>
+                        <li><a href="miku_details.html"><img src="./img/svg/details.svg" alt=""/>详情</a></li>
+                        <li><a href="miku_vocaloid.html"><img src="./img/svg/vocaloid.svg" alt=""/>Vocaloid</a></li>
+                        <li><a href="miku_live.html"><img src="./img/svg/live.svg" alt=""/>演出</a></li>
+                        <li><a href="miku_news.html"><img src="./img/svg/news.svg" alt=""/>咨询</a></li>
+                        <li><a href="miku_others.html"><img src="./img/svg/others.svg" alt=""/>其他</a></li>
+                    </ul>
+                </div>
+                <div id="header_center3"><a href="anime.html"><img src="./img/svg/anime.svg" alt=""/>动漫</a></div>
+                <div id="header_center4">
+                    <a href="article.html"><img src="./img/svg/study.svg" alt=""/>文章</a>
+                    <div class="arrow"></div>
+                    <ul>
+                        <li><a href="article_web.html"><img src="./img/svg/web.svg" alt=""/>网络</a></li>
+                        <li><a href="article_japanese.html"><img src="./img/svg/japanese.svg" alt=""/>日语</a></li>
+                        <li><a href="article_others.html"><img src="./img/svg/others.svg" alt=""/>其他</a></li>
+                    </ul>
+                </div>
+                <div id="header_center5"><a href="time.html"><img src="./img/svg/time.svg" alt=""/>时光机</a></div>
+                <div id="header_center6"><a href="sign.html"><img src="./img/svg/talk.svg" alt=""/>留言板</a></div>
+                <div id="header_center7"><a href="about.html"><img src="./img/svg/about.svg" alt=""/>关于我</a></div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="body">
+    <div id="web_body">
+        <div id="title_pic">
+            <img src="img/2.jpg" alt="">
+        </div>
+        <div id="article_title">
+            <h2 style="line-height:50px;">画师推荐—Rella</h2>
+            <p style="margin:10px 0;line-height:25px;">如果你能感受到我想要传达的东西就好了。<br/>rella是一个插画家，毕业于清华大学美术学院服装设计系。</p>
+            <h4 style="line-height:30px;">标签1&nbsp;&nbsp;&nbsp;&nbsp;标签2&nbsp;&nbsp;&nbsp;&nbsp;标签3&nbsp;&nbsp;&nbsp;&nbsp;标签4</h4>
+            <h4 style="line-height:30px;">发布于2020/3/29&nbsp;&nbsp;&nbsp;&nbsp;浏览3939&nbsp;&nbsp;&nbsp;&nbsp;评论39</h4>
+        </div>
+        <div id="markdown_text">
+            <iframe scrolling="yes" id="main" name="main" frameborder="0" src="md/miku_details1.html" style="height:100%;width:100%;"></iframe>
+        </div>
+        <script>
+            // 计算页面的实际高度，iframe自适应会用到
+            function calcPageHeight(doc) {
+                var cHeight = Math.max(doc.body.clientHeight, doc.documentElement.clientHeight)
+                var sHeight = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight)
+                var height  = Math.max(cHeight, sHeight)
+                return height
+            }
+            //根据ID获取iframe对象
+            var ifr = document.getElementById('main')
+            ifr.onload = function() {
+                //解决打开高度太高的页面后再打开高度较小页面滚动条不收缩
+                ifr.style.height='0px';
+                var iDoc = ifr.contentDocument || ifr.document
+                var height = calcPageHeight(iDoc)
+                if(height < 850){
+                    height = 850;
+                }
+                ifr.style.height = height + 'px'
+            }
+        </script>
+        <div id="comment">
+            <button id="comment_button">评论</button>
+            <textarea class="comment_textarea"></textarea>
+            <ul id="comment_ul">
+                <li id="comment_model" class="comment_li">
+                    <div class="comment_ifo">
+                        <div class="id_div">
+                            <div class="id_pic"><img src="img/akua.png" alt=""></div>
+                            <div class="id_ano">
+                                <div class="id_name">海之女仆阿库娅</div>
+                                <div class="id_time"></div>
+                            </div>
+                        </div>
+                        <button class="comment_reply_button">回复</button>
+                        <div class="comment_floor"></div>
+                    </div>
+                    <div class="comment_text"></div>
+                    <ul class="reply">
+                        <li id="reply_model" class="reply_li">
+                            <div class="comment_ifo">
+                                <div class="id_div">
+                                    <div class="id_pic"><img src="img/mea.jpg" alt=""></div>
+                                    <div class="id_ano">
+                                        <div class="id_name">擦盘子女王</div>
+                                        <div class="id_time"></div>
+                                    </div>
+                                </div>
+                                <button class="reply_button">回复</button>
+                            </div>
+                            <div id="reply_object_model" class="reply_object"></div>
+                            <div class="comment_text"></div>
+                        <li>
+                    </ul>
+                </li>
+                <li class="comment_li">
+                    <div class="comment_ifo">
+                        <div class="id_div">
+                            <div class="id_pic"><img src="img/akua.png" alt=""></div>
+                            <div class="id_ano">
+                                <div class="id_name">海之女仆阿库娅</div>
+                                <div class="id_time">2020-04-20 20:28:28</div>
+                            </div>
+                        </div>
+                        <button class="comment_reply_button">回复</button>
+                        <div class="comment_floor">#1</div>
+                    </div>
+                    <div class="comment_text">大佬。。。我这边是破解到最后一步，在Execute Script之后无法直接将文件拖入，在窗口点选文件的话左键没反应，右键是在文件下面显示蓝色的光标。右上文件打开方式有import和cancle两个按钮，没有其他选项了就。现在我应该按什么打开fila文件呢？</div>
+                    <ul class="reply">
+                        <li class="reply_li">
+                            <div class="comment_ifo">
+                                <div class="id_div">
+                                    <div class="id_pic"><img src="img/mea.jpg" alt=""></div>
+                                    <div class="id_ano">
+                                        <div class="id_name">擦盘子女王</div>
+                                        <div class="id_time">2020-04-20 20:28:28</div>
+                                    </div>
+                                </div>
+                                <button class="reply_button">回复</button>
+                            </div>
+                            <div class="reply_object">@yihihihihi</div>
+                            <div class="comment_text">大佬。。。我这边是破解到最后一步，在Execute Script之后无法直接将文件拖入，在窗口点选文件的话左键没反应，右键是在文件下面显示蓝色的光标。右上文件打开方式有import和cancle两个按钮，没有其他选项了就。现在我应该按什么打开fila文件呢？</div>
+                        </li>
+                        <li class="reply_li">
+                            <div class="comment_ifo">
+                                <div class="id_div">
+                                    <div class="id_pic"><img src="img/sui.jpg" alt=""></div>
+                                    <div class="id_ano">
+                                        <div class="id_name">yihihihihi</div>
+                                        <div class="id_time">2020-04-20 20:28:28</div>
+                                    </div>
+                                </div>
+                                <button class="reply_button">回复</button>
+                            </div>
+                            <div class="reply_object"></div>
+                            <div class="comment_text">大佬。。。我这边是破解到最后一步，在Execute Script之后无法直接将文件拖入，在窗口点选文件的话左键没反应，右键是在文件下面显示蓝色的光标。右上文件打开方式有import和cancle两个按钮，没有其他选项了就。现在我应该按什么打开fila文件呢？</div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="web_body_foot"></div>
+    </div>
+    <div id="aside">
+        <div>日向の時光機</div>
+        <div>我的梦 愿望 诅咒 成了你的形状</div>
+    </div>
+    <div id = "tag"><img alt="" src="img/scroll.png"/></div>
+    <footer>
+        <div id="footer">
+            <div id="footer_top"></div>
+            <div id="footer_center"><h2>Hinataの時光機</h2><h4>By Hinata</h4></div>
+            <div id="footer_bottom"><p>©2039 日向Hinata 樱ICP备39393939号</p></div>
+        </div>
+    </footer>
+</div>
+<div id="live">
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        var message_Path = '';
+        var home_Path = 'http://localhost:63342/';
+    </script>
+    <script type="text/javascript" src="js/live2d.js"></script>
+    <script type="text/javascript" src="js/message.js"></script>
+    <script type="text/javascript">
+        loadlive2d("live2d", "model/pio/model.json");
+    </script>
+</div>
+</body>
+</html>

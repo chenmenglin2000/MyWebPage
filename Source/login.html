@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hinataの時光機</title>
+    <link rel="shortcut icon" href="./img/svg/title.svg" type="image/x-icon"/>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="css/live2d.css" />
+</head>
+<body id="login_page">
+<div id="login_title"><h1>Hinataの時光機</h1><h2>なんて蝶の見る夢で</h2></div>
+<div id="login_div">
+    <div id="login_choose" ><div id="login_l">登录</div><div id="login_r">注册</div></div>
+    <div id="login_text">
+        <div id="login_name"><label for="p_name">账号</label><input type="text" id="p_name"/></div>
+        <div id="login_password"><label for="p_pass">密码</label><input type="text" id="p_pass"/></div>
+        <div id="register_gmail"><label for="r_gmail">邮箱</label><input type="email" id="r_gmail"/></div>
+        <div id="login_other">
+            <div id="login_other_pic">
+                <img id="l_1" src="./img/svg/qq.svg" alt=""/>
+                <img id="l_2" src="./img/svg/weibo.svg" alt=""/>
+                <img id="l_3" src="./img/svg/bili.svg" alt=""/>
+            </div>
+            <div id="login_forget">忘记密码</div>
+        </div>
+        <button type="button" id="login_ok">登录</button>
+    </div>
+</div>
+<div id="live">
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        var message_Path = '';
+        var home_Path = 'http://localhost:63342/';
+    </script>
+    <script type="text/javascript" src="js/live2d.js"></script>
+    <script type="text/javascript" src="js/message.js"></script>
+    <script type="text/javascript">
+        loadlive2d("live2d", "model/pio/model.json");
+    </script>
+</div>
+</body>
+</html>
+
+<script>
+    /*登陆转换*/
+    var login_ok = document.querySelector("#login_ok");
+    var login_forget = document.querySelector("#login_forget");
+    var login = document.querySelector("#login_l");
+    var register = document.querySelector("#login_r");
+    var lr_div = document.querySelector("#login_div");
+    var register_gmail = document.querySelector("#register_gmail");
+    var login_text = document.querySelector('#login_text');
+    register.onclick = function(){
+        register.style.color = 'black';
+        register.style.backgroundColor = "rgba(255, 249, 248, 0.90)";
+        login.style.color = 'rgba(255, 255, 255, 0.8)';
+        login.style.backgroundColor = 'rgba(0, 0, 0, 0.61)';
+        lr_div.style.height = 360 + 'px';
+        login_text.style.height = 310 + 'px';
+        register_gmail.style.display = 'block';
+        login_forget.innerHTML = '快速注册';
+        login_ok.innerHTML = '注册';
+    };
+    login.onclick = function(){
+        login.style.color = 'black';
+        login.style.backgroundColor = "rgba(255, 249, 248, 0.90)";
+        register.style.color = 'rgba(255, 255, 255, 0.8)';
+        register.style.backgroundColor = 'rgba(0, 0, 0, 0.61)';
+        lr_div.style.height = 300 + 'px';
+        login_text.style.height = 250 + 'px';
+        register_gmail.style.display = 'none';
+        login_forget.innerHTML = '忘记密码';
+        login_ok.innerHTML = '登录';
+    };
+</script>
